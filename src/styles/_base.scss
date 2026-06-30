@@ -1,0 +1,19 @@
+/* ---- Base / reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--infra-text-medium);
+  line-height: var(--infra-text-line-height);
+  color: var(--color-text);
+}

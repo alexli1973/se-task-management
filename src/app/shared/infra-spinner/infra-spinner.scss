@@ -1,0 +1,33 @@
+.infra-spinner {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: infra-spinner-rotate 0.7s linear infinite;
+}
+
+.infra-spinner--small {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-width: 2px;
+}
+
+.infra-spinner--large {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 4px;
+}
+
+@keyframes infra-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infra-spinner {
+    animation-duration: 2s;
+  }
+}

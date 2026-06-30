@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.infra-input__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-label);
+}
+
+.infra-input__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /* base field look comes from the shared .infra-field class; only the error
+     state is component-specific here */
+  &--error .infra-field {
+    border-color: var(--color-error);
+  }
+}
+
+.infra-input__reveal {
+  position: absolute;
+  inset-inline-start: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-text-label);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* leave room for the toggle so text doesn't slip under it */
+.infra-input__control:has(.infra-input__reveal) .infra-field {
+  padding-inline-start: 40px;
+}
+
+.infra-input__error {
+  margin: 6px 0 0;
+  min-height: 1rem; /* reserve space so the form doesn't jump when the error toggles */
+  font-size: 13px;
+  line-height: 1rem;
+  color: var(--color-error);
+}

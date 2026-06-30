@@ -1,0 +1,33 @@
+<div
+  class="infra-modal__backdrop"
+  role="presentation"
+  (click)="onClose()"
+>
+  <section
+    class="infra-modal"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="title()"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="onClose()"
+  >
+    <header class="infra-modal__header">
+      <h2 class="infra-modal__title">
+        {{ title() }}
+      </h2>
+
+      <button
+        type="button"
+        class="infra-modal__close"
+        aria-label="סגירה"
+        (click)="onClose()"
+      >
+        X
+      </button>
+    </header>
+
+    <div class="infra-modal__content">
+      <ng-content />
+    </div>
+  </section>
+</div>

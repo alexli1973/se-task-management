@@ -1,0 +1,52 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  direction: rtl;
+}
+
+.infra-modal__backdrop {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--c-ink) 45%, transparent);
+}
+
+.infra-modal {
+  width: min(100%, 480px);
+  border-radius: 24px;
+  background: var(--color-surface);
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--c-ink) 22%, transparent);
+  overflow: hidden;
+}
+
+.infra-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.infra-modal__title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 22px;
+}
+
+.infra-modal__close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.infra-modal__content {
+  padding: 24px;
+}

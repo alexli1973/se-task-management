@@ -1,0 +1,49 @@
+<app-header
+  [user]="user()"
+  [totalTasks]="totalTasks()"
+  [columnsCount]="columnsCount()"
+  (logout)="onLogout()"
+  (newTask)="onNewTask()"
+/>
+<div class="main-wrapper">
+  <div class="filters-search">
+    <app-priority-select
+      [includeAll]="true"
+      [label]="priorityLabel"
+      [value]="priority()"
+      (valueChange)="onPriority($event)"
+    />
+    <div class="filters-search__search">
+      <app-input
+        [placeholder]="searchPlaceholder"
+        [reserveError]="false"
+        [ngModel]="search()"
+        (ngModelChange)="onSearch($event)"
+      ></app-input>
+    </div>
+  </div>
+
+  <div class="board-area">
+    <app-board />
+
+    @if (loading()) {
+      <div class="board-area__loader">
+        <app-infra-spinner size="large" />
+      </div>
+    }
+  </div>
+</div>
+
+@if (isCreateTaskModalOpen()) {
+  <app-infra-modal
+    title="משימה חדשה"
+    (close)="closeCreateTaskModal()"
+  >
+    <app-new-task-form
+      (created)="closeCreateTaskModal()"
+      (cancel)="closeCreateTaskModal()"
+    />
+  </app-infra-modal>
+}
+
+

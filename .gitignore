@@ -24,6 +24,9 @@ yarn-error.log
 .vscode/
 .history/
 
+# AI tools
+.claude/
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/

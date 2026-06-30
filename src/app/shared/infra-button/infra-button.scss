@@ -1,0 +1,65 @@
+:host {
+  display: block;
+}
+
+.infra-button {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  /* sizes */
+  &--small {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  &--medium {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  &--large {
+    padding: 16px 22px;
+    font-size: 17px;
+  }
+
+  /* primary: solid brand fill */
+  &--primary {
+    background: var(--color-primary);
+    color: var(--color-surface);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-hover);
+    }
+
+    &:disabled {
+      background: var(--color-primary-soft);
+      cursor: not-allowed;
+    }
+  }
+
+  /* secondary: outlined, neutral fill */
+  &--secondary {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-muted);
+    }
+
+    &:disabled {
+      color: var(--color-placeholder);
+      cursor: not-allowed;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}

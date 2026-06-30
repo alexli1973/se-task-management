@@ -1,0 +1,38 @@
+/* ---- Design tokens: colors ---- */
+:root {
+  /* ===== 6 main colors ===== */
+  --c-primary: #ea580c; /* brand orange */
+  --c-surface: #ffffff; /* cards, inputs, panels */
+  --c-bg: #e7e8ea; /* app background */
+  --c-ink: #101828; /* primary text */
+  --c-muted: #667085; /* secondary text & borders */
+  --c-danger: #d92d20; /* errors / destructive */
+
+  /* ===== semantic tokens (all derived from the 6 main colors) ===== */
+  /* brand */
+  --color-primary: var(--c-primary);
+  --color-primary-hover: color-mix(in srgb, var(--c-primary) 82%, black);
+  --color-primary-soft: color-mix(in srgb, var(--c-primary) 35%, white);
+
+  /* surfaces */
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-muted: color-mix(in srgb, var(--c-bg) 45%, var(--c-surface));
+
+  /* text */
+  --color-text: var(--c-ink);
+  --color-text-muted: var(--c-muted);
+  --color-text-label: color-mix(in srgb, var(--c-ink) 70%, var(--c-muted));
+  --color-placeholder: color-mix(in srgb, var(--c-muted) 65%, white);
+
+  /* borders & state */
+  --color-border: color-mix(in srgb, var(--c-muted) 35%, white);
+  --color-error: var(--c-danger);
+  --color-focus: var(--c-muted); /* neutral gray focus for form fields */
+  --focus-ring: color-mix(in srgb, var(--c-muted) 22%, transparent);
+
+  /* task priority — functional status signals, kept separate from the UI palette */
+  --priority-high: var(--c-danger);
+  --priority-medium: #f59e0b; /* amber: the only non-main hue, reserved for the "medium" signal */
+  --priority-low: var(--c-muted);
+}

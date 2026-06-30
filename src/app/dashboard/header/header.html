@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header__board">
+    <span class="header__summary infra-text-small">
+      {{ texts.summary(totalTasks(), columnsCount()) }}
+    </span>
+  </div>
+
+  @if (user(); as currentUser) {
+    <div class="header__user">
+      <span class="header__avatar">{{ initials() }}</span>
+      <app-button type="button" size="small" [label]="texts.newTask" (clicked)="newTask.emit()" />
+      <app-button type="button" size="small" [label]="texts.logout" (clicked)="logout.emit()" />
+    </div>
+  }
+</header>

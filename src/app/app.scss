@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  min-height: 100%;
+  background: var(--color-bg);
+}
+
+.http-error-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-error);
+  color: var(--color-surface);
+  direction: rtl;
+
+  button {
+    border: 0;
+    background: transparent;
+    color: var(--color-surface);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,30 @@
+/* ---- Shared form controls ---- */
+/* One self-contained class for every text field (input / textarea / select).
+   Global (not view-encapsulated), so components reuse it instead of re-styling. */
+.infra-field {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &::placeholder {
+    color: var(--color-placeholder);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-focus);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
+
+  &:disabled {
+    background: var(--color-surface-muted);
+    color: var(--color-placeholder);
+    cursor: not-allowed;
+  }
+}

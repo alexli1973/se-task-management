@@ -1,0 +1,48 @@
+.board {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.board__column {
+  flex: 1 1 0;
+  min-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: var(--color-surface-muted);
+}
+
+.board__column-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.board__column-title {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.board__column-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.375rem;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.board__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

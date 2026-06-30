@@ -1,0 +1,56 @@
+<form class="new-task-form" [formGroup]="form" (ngSubmit)="submit()">
+  <app-input
+    [label]="texts.title.label"
+    formControlName="title"
+    [placeholder]="texts.title.placeholder"
+    [error]="
+      form.controls.title.touched && form.controls.title.invalid
+        ? texts.title.error
+        : null
+    "
+  />
+
+  <div class="new-task-form__field">
+    <label class="new-task-form__label" for="new-task-description">
+      {{ texts.description.label }}
+    </label>
+    <textarea
+      id="new-task-description"
+      class="infra-field new-task-form__textarea"
+      rows="3"
+      formControlName="description"
+      [placeholder]="texts.description.placeholder"
+    ></textarea>
+  </div>
+
+  <div class="new-task-form__field">
+    <label class="new-task-form__label" for="new-task-status">
+      {{ texts.statusLabel }}
+    </label>
+    <select id="new-task-status" class="infra-field" formControlName="status">
+      @for (status of statusOptions; track status) {
+        <option [value]="status">{{ statusLabels[status] }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="new-task-form__field">
+    <span class="new-task-form__label">{{ texts.priorityLabel }}</span>
+    <app-priority-select
+      [value]="form.controls.priority.value"
+      (valueChange)="onPriority($event)"
+    />
+  </div>
+
+  <div class="new-task-form__footer">
+    <div class="new-task-form__actions">
+      <app-button type="submit" [label]="texts.submit" [disabled]="loading()" />
+      <app-button
+        type="button"
+        variant="secondary"
+        [label]="texts.cancel"
+        (clicked)="onCancel()"
+      />
+    </div>
+  </div>
+</form>

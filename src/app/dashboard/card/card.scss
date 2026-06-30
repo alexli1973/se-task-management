@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid var(--priority-color);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+}
+
+.card__title {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.card__priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  align-self: flex-start;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--priority-color) 12%, transparent);
+  color: var(--color-text-muted);
+}
+
+.card__priority-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--priority-color);
+}
+
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,31 @@
+/* ---- Design tokens: typography ---- */
+:root {
+  --font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --infra-text-small: 0.875rem; /* 14px @ 16px root */
+  --infra-text-medium: 1rem; /* 16px */
+  --infra-text-large: 1.5rem; /* 24px */
+  --infra-text-xlarge: 3rem;
+  --infra-text-line-height: 1.5;
+}
+
+/* ---- Global text utility classes (one self-contained class each) ---- */
+.infra-text-small {
+  font-size: var(--infra-text-small);
+  line-height: var(--infra-text-line-height);
+}
+
+.infra-text-medium {
+  font-size: var(--infra-text-medium);
+  line-height: var(--infra-text-line-height);
+}
+
+.infra-text-large {
+  font-size: var(--infra-text-large);
+  line-height: var(--infra-text-line-height);
+}
+
+.infra-text-xlarge {
+  font-size: var(--infra-text-xlarge);
+  line-height: var(--infra-text-line-height);
+}

@@ -1,0 +1,40 @@
+.priority-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.priority-select__label {
+  color: var(--color-text-muted);
+  margin-inline-end: 0.25rem;
+}
+
+.priority-select__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.priority-select__chip:hover {
+  border-color: var(--color-text-muted);
+}
+
+.priority-select__chip--active {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-surface);
+}
+
+.priority-select__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--priority-color);
+}

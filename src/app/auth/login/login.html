@@ -1,0 +1,59 @@
+<div class="login-page">
+  <div class="login-pane login-pane--art">
+    <div class="promo">
+      <div class="infra-text-medium promo__eyebrow">
+        {{ texts.promo.eyebrow }}
+      </div>
+      <div class="infra-text-xlarge promo__title">
+        <span>{{ texts.promo.titleLine1 }}</span>
+        <span>{{ texts.promo.titleLine2 }}</span>
+      </div>
+      <p class="infra-text-medium">{{ texts.promo.description }}</p>
+    </div>
+  </div>
+
+  <div class="login-pane login-pane--form">
+    <div class="login-card">
+      <div class="infra-text-xlarge">
+        {{ texts.title }}
+      </div>
+      <div class="infra-text-medium">
+        {{ texts.subtitle }}
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form">
+        <app-input
+          [label]="texts.email.label"
+          type="email"
+          formControlName="email"
+          [placeholder]="texts.email.placeholder"
+          autocomplete="email"
+          [error]="
+            loginForm.controls.email.touched && loginForm.controls.email.invalid
+              ? texts.email.error
+              : null
+          "
+        />
+
+        <app-input
+          [label]="texts.password.label"
+          type="password"
+          formControlName="password"
+          [placeholder]="texts.password.placeholder"
+          autocomplete="current-password"
+          [error]="
+            loginForm.controls.password.touched && loginForm.controls.password.invalid
+              ? texts.password.error
+              : null
+          "
+        />
+
+        <app-button
+          type="submit"
+          [disabled]="loading()"
+          [label]="loading() ? texts.submitting : texts.submit"
+        />
+      </form>
+    </div>
+  </div>
+</div>

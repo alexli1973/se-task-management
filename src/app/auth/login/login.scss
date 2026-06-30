@@ -1,0 +1,58 @@
+.login-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-pane {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-pane--form {
+  background: var(--color-surface);
+}
+
+.login-pane--art {
+  background: var(--color-surface-muted);
+}
+
+.promo {
+  width: 100%;
+  max-width: 500px;
+}
+
+.promo__eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--color-primary);
+}
+
+.promo__title {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+}
+
+.promo__desc {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .login-pane--art {
+    display: none;
+  }
+}
+
+.login-form {
+  display: grid;
+  gap: 0.5rem;
+}

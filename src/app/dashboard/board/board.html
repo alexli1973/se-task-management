@@ -1,0 +1,16 @@
+<div class="board">
+  @for (column of columns(); track column.status) {
+    <section class="board__column">
+      <div class="board__column-head">
+        <span class="board__column-title infra-text-small">{{ texts.columns[column.status] }}</span>
+        <span class="board__column-count">{{ column.tasks.length }}</span>
+      </div>
+
+      <div class="board__cards">
+        @for (task of column.tasks; track task.id) {
+          <app-card [task]="task" />
+        }
+      </div>
+    </section>
+  }
+</div>

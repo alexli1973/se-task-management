@@ -1,0 +1,26 @@
+<div class="card" [appPriorityColor]="task().priority">
+  <div class="card__title infra-text-small">{{ task().title }}</div>
+
+  <div class="card__priority infra-text-small">
+    <span class="card__priority-dot"></span>
+    {{ priorityLabel() }}
+  </div>
+
+  <div class="card__actions">
+    <select
+      [value]="task().status"
+      (change)="onStatusChange($any($event.target).value)"
+    >
+      <option value="todo">לביצוע</option>
+      <option value="in-progress">בתהליך</option>
+      <option value="done">הושלם</option>
+    </select>
+
+    <app-button
+      label="מחיקה"
+      size="small"
+      (click)="onDelete()">
+
+    </app-button>
+  </div>
+</div>

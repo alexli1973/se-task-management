@@ -1,0 +1,37 @@
+.new-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.new-task-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.new-task-form__label {
+  color: var(--color-text-muted);
+}
+
+/* base field look comes from the shared .infra-field class */
+.new-task-form__textarea {
+  resize: vertical;
+}
+
+.new-task-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.new-task-form__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.new-task-form__endpoint {
+  color: var(--color-text-muted);
+}
